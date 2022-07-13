@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head >
-        <meta name="viewport" content="with=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladdin Digital</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Aladdin Digital</title>
-    </head>
-    <body>
-        <section class="header">
-            <nav>
-                <a href="index.html"><img  src="images/aaaa.png"/></a>
-                <div class="nav-links">
-                    <i class="fa fa-times" onclick="hideMenu()"></i>
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="service.html">OUR SERVICES</a></li>
-                        <li><a href="aboutus.html">ABOUT US</a></li>
-                        <li><a href="contactus.html">CONTACT US</a></li>
-                    </ul>
-                </div>
-                <i class="fa fa-bars" onclick="showMenu()"></i>
-            </nav>
-            
+</head>
+<body>
+
+
+<section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <i class="fa fa-times"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="service.html">Our Services</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"></i>
+        </nav>
         <div class="text-box">
             <p> G&apos;day, we are Aladdin Digital, public sector IT consulting firm Based in Canberra. 
                 We are serious about providing high quality IT solutions including 
                 <a href="service.html">technical management</a>, Azure 
                 <a href="service.html">infrastructure design</a>,  and DevOps 
                 <a href="service.html">engineering</a> to our clients.
-                Feeling Interested in our IT Consulting Services? Don’t hestitate to Contact Us Today.
+                Feeling Interested in our IT Consulting Services? Don&apos;t hestitate to 
+                <a href="contactus.html">Contact Us Today</a>.                
             </p>
             <a href="contactus.html" class="hero-btn">Contact Us Now</a>
         </div>    
-        </section>
+    </section>
 
-        <!--JavaScript for Toggle Menu-->
-        <script> 
-        var navLinks = document.getElementById("navLinks");
-        function showMenu() {
-            navLinks.style.right = "0";
+    <!---->
+
+
+<!--JavaScript for toggle menu  -->
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right= "0";
         }
-        function hideMenu() {
-            navLinks.style.right = "-200px";
+        function hideMenu(){
+            navLinks.style.right= "-200px";
         }
-        </script>
-        
-    </body>
+    </script>  
+</body>
 </html>
