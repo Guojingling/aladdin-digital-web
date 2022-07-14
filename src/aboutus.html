@@ -1,1 +1,124 @@
-<!---->
+<!DOCTYPE html>
+<!--Big Thankyou to Siham Al-Riyami, whose design of https://eduforduni.com/course.html 
+was greatly influential on the design of this Aladdin Digital webpage-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladdin Digital</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+  
+<!-- Home page -->    
+<section class="sub-header">
+    <nav>
+        <a href="index.html"><img src="img/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+        <h1>We Solve Problems.</h1>
+    </section>
+
+<!-- Who are we -->
+<section class="facilities">
+    <h1>Who are we?</h1>
+    <p> G&apos;day, we are Aladdin Digital, public sector IT consulting firm Based in Canberra.
+        We are serious about providing high quality IT solutions including
+        <a href="service.html">technical management</a>, Azure
+        <a href="service.html">infrastructure design</a>,  and DevOps
+        <a href="service.html">engineering</a> to our clients.              
+    </p>    <div class="row">
+        <div class="facilities-col">
+            <img src="./img/blankuser.png">
+                <h3>Employee 1</h3>
+                <p>
+                    Attitude, Qualifications, Experience.
+                </p>
+            </div>
+            <div class="facilities-col">
+            <img src="./img/blankuser.png">
+                <h3>Employee 2</h3>
+                <p>
+                    Attitude, Qualifications, Experience.
+                </p>            </div>
+            <div class="facilities-col">
+            <img src="./img/blankuser.png">
+                <h3>Employee 3</h3>
+                <p>
+                    Attitude, Qualifications, Experience.
+                </p>            </div>
+        </div>
+</section>
+
+<!--TODO: ADD LINKS TO SOCIAL MEDIA-->
+<!-- CONTACTDETAILS/SERIVICES SHORT SUMMARY -->
+<section class="testmonial">
+    <div class="row">
+        <div class="testmonial-col">
+            <img src="./img/services.png">
+            <div>
+                <h3>Our Services</h3>
+                <ul style="list-style-type: disc">
+                    <li>DevOps Engineering</li>
+                    <li>Full Stack Development</li>
+                    <li>Azure infrastructure Design</li>
+                    <li>Quality Assurance Management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="testmonial-col">
+            <img src="./img/blankuser.png">
+            <div>
+                <h3>Contact Details</h3>
+                <ul style="list-style-type: disc">
+                    <li>61 Hobo St. Narrabundah 2604 ACT</li>
+                    <li>+(61) 420 420 420</li>
+                    <li>mrcluckles@aladdindigital.com.au</li>
+                    <li>
+                        <div class="icons">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-wechat"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer">
+    <p>© Aladdin Digital 2022 All rights reserved - <a href="privacypolicy.html">Privacy Policy</a></p>
+</section>
+
+<!--JavaScript for toggle menu  -->
+<script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right= "0";
+    }
+    function hideMenu(){
+        navLinks.style.right= "-200px";
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--Big Thankyou to Siham Al-Riyami, whose design of https://eduforduni.com/course.html 
+was greatly influential on the design of this Aladdin Digital webpage-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladdin Digital</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<!-- Home page -->    
+<section class="sub-header">
+    <nav>
+        <a href="index.html"><img src="img/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+        <h1>Our Services</h1>
+    </section>
+
+<!--TODO-->    
+<!-- Our Services -->
+<section class="Course">
+    <h1>Services We Offer</h1>
+    <p>Explore our various services below and select the service which you think best caters to your needs.
+    </p>
+        <div class="row">
+            <div class="course-col">
+                <h3>DevOps Engineering</h3>
+                <p>{Elaborate further} 
+                    We are proficient DevOps engineers that strive to balance resources throughout the software development by introducing processes and tools that reduce the complexity of code maintenance and updates.
+                </p>
+            </div>
+            <div class="course-col">
+                <h3>Full Stack Development</h3>
+                <p>{Elaborate further} 
+                    As full stack developers, we strive to be as versatile as possible in the rapidly evolving development environment in order to be able to transition seamlessly between various development environments.
+                </p>
+            </div>
+            <div class="course-col">
+                <h3>Azure Infrastructure Design</h3>
+                <p>{Elaborate further} 
+                    As avid Azure developers, we apply Microsoft Azure design principles to increas the scalability, resilience, and manageability of the applications that we develop.
+                </p>
+            </div>
+        </div>
+
+</section>
+
+<!-- Our Expertise -->
+<section class="facilities">
+    <h1>Our Expertise and Experience</h1>
+    <p>At Alladin Digital, our talented programmers have lots of useful expertise.</p>
+    <div class="row">
+        <div class="facilities-col">
+            <img src="./img/ato.png">
+            <h3>Experience with the ATO</h3>
+            <p>multiple members of Aladdin Digital have had experience working with the ATO and other government agenices before.
+            </p>
+        </div>
+        <div class="facilities-col">
+            <img src="./img/project.png">
+            <h3>Projects</h3>
+            <p>
+                We have done lots of projects before.
+            </p>
+        </div>
+        <div class="facilities-col">
+            <img src="./img/anu.png">
+                <h3>Excellent Education</h3>
+                <p> Programmers at Aladdin Digital have all graduated from the best universities in Australia.
+                </p>
+        </div>
+    </div>
+</section>
+
+<!--TODO: ADD LINKS TO SOCIAL MEDIA-->
+<!-- CONTACTDETAILS/SERIVICES SHORT SUMMARY -->
+<section class="testmonial">
+    <div class="row">
+        <div class="testmonial-col">
+            <img src="./img/services.png">
+            <div>
+                <h3>Our Services</h3>
+                <ul style="list-style-type: disc">
+                    <li>DevOps Engineering</li>
+                    <li>Full Stack Development</li>
+                    <li>Azure infrastructure Design</li>
+                    <li>Quality Assurance Management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="testmonial-col">
+            <img src="./img/blankuser.png">
+            <div>
+                <h3>Contact Details</h3>
+                <ul style="list-style-type: disc">
+                    <li>61 Hobo St. Narrabundah 2604 ACT</li>
+                    <li>+(61) 420 420 420</li>
+                    <li>mrcluckles@aladdindigital.com.au</li>
+                    <li>
+                        <div class="icons">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-wechat"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer">
+    <p>© Aladdin Digital 2022 All rights reserved - <a href="privacypolicy.html">Privacy Policy</a></p>
+</section>
+
+<!--JavaScript for toggle menu  -->
+<script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right= "0";
+    }
+    function hideMenu(){
+        navLinks.style.right= "-200px";
+    }
+</script>
+
+</body>
+</html>
+
