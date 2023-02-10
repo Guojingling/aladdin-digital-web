@@ -375,7 +375,7 @@ background: rgba(211, 0, 0, 0.2);
 }
 /* About Us page */
 .sub-header{
-  height: 50vh;
+  height: 20vh;
   text-align: center;
   /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(./img/photoofworking.jpg); */
   background-image: linear-gradient(#F4F5F7,#F4F5F7),url(img/indexbackgroundtop.png);
