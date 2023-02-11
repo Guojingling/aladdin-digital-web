@@ -9,7 +9,7 @@ was greatly influential on the design of this Aladdin Digital webpage. */
 }
 .header{
     /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(./img/background.jpg); */
-  background-image: linear-gradient(#F4F5F7,#F4F5F7),url(img/indexbackgroundtop.png);
+  background-image: linear-gradient(#F4F5F7,#F4F5F7),url(../img/indexbackgroundtop.png);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
