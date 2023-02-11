@@ -432,7 +432,7 @@ background: rgba(211, 0, 0, 0.2);
   margin: auto;
 }
 .contact-col{
-  flex-basis: 48%;
+  flex-basis: 80%;
   margin-bottom: 30px;
 }
 .contact-col div{
