@@ -235,7 +235,7 @@ background: rgba(211, 0, 0, 0.2);
 .facilities{
   width: 80%;
   margin: auto;
-  text-align: center;
+  text-align: left;
   padding-top: 50px;
 }
 .facilities h1 {
