@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--Big Thankyou to Siham Al-Riyami, whose design of https://eduforduni.com/course.html 
+was greatly influential on the design of this Aladdin Digital webpage-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladdin Digital</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+
+</head>
+<body>
+<!-- Home page -->    
+<section class="sub-header">
+    <nav>
+        <a href="index.html"><img src="img/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+        <h1>Contact Us</h1>
+
+    </section>
+
+    <!-- contact Us -->
+
+    <section class="location">
+           <iframe src="https://maps.google.com/maps?q=40%20printers%20way,%20kingston&t=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                  <h3>About the Role</h3>
+                    <span>
+                        <h5>The Bureau requires the services of 2 x Solutions Architects in the Water Program. The Solution Architect Water Information Transformation (WIT) will work across delegated Stream(s), work with the WIT Program to deliver fit for purpose Solution Architectures. This would include but not limited to working within a multidisciplinary team of Business Analysts, Program Architects, Project and Program Managers and Business Stakeholders.</h5>
+                        <p>Address: 40 Printers Way, Kingston, ACT 2604</p>
+                    </span>  
+                </div>
+                <div>
+                    <h3>The role will:</h3>
+                    <span>
+                        <li>Develop solution architectures in accordance with Architecture Principles, reference architectures and Security guidelines.</li>
+                        <li>Engage with internal partners(s) in developing solution architectures.</li>
+                        <li>Work with the broader program team to ensure the overall architecture is consistent with, and fully supports, the overall business and platform architectures for the program.</li>
+                        <li>Assist in specifying the infrastructure requirements and architecture required to support the services architecture.</li>
+                        <li>Assist in estimating budgetary resources, schedules, and costs required for the solutions.</li>
+                        <li>Assist in developing patterns when requested.</li>
+                        <li>Work with internal stakeholders and external stakeholders in producing Solution Architecture and assisting with Detail Design deliverables.</li>
+                        <li>Work with the various roles and workstreams within the program.</li>
+                        <li>Comply with all client work, health and safety policies and procedures, and take reasonable care for your own health and safety and that of employees, contractors and visitors who may be affected by your conduct.</li>
+                    </span>  
+                </div>
+                <div>
+                 
+                    <span>
+                        <li>Awareness of IT security concepts and standards.</li>
+                        <li>5+ years of Solution Architecture experience.</li>
+                        <li>Ability to build relationships with senior managers and staff and an ability to communicate effectively with both business and technical staff.</li>
+                        <li>Understanding of how to design services to meet security and useability requirements.</li>
+                        <li>Due to security clearance requirements for this role, candidate must have NV1 Security Clearance.</li>
+                    </span>  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="contact-col">
+            <form>
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email"  placeholder="Enter email address" required>
+                <input type="text" name="subject" placeholder="Enter your subject" required>
+                <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                <button type="button" class="hero-btn red-btn" onClick="testResults(this.form)">Send Message</button>
+            </form>
+            </div>
+        </div>        
+
+    </section>
+
+<!--TODO: ADD LINKS TO SOCIAL MEDIA-->
+<!-- CONTACTDETAILS/SERIVICES SHORT SUMMARY -->
+<section class="testmonial">
+    <div class="row">
+        <div class="testmonial-col">
+            <img src="./img/services.png">
+            <div>
+                <h3>Our Services</h3>
+                <ul style="list-style-type: disc">
+                    <li>DevOps Engineering</li>
+                    <li>Full Stack Development</li>
+                    <li>Azure infrastructure Design</li>
+                    <li>Quality Assurance Management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="testmonial-col">
+            <img src="./img/blankuser.png">
+            <div>
+                <h3>Contact Details</h3>
+                <ul style="list-style-type: disc">
+                    <li>40 Printers Way, Kingston 2604 ACT</li>
+                    <li>+(61) 488 833 123</li>
+                    <li>info@aladdindigital.com.au</li>
+                    <li>
+                        <div class="icons">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-wechat"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer">
+    <p>© Aladdin Digital 2022 All rights reserved - <a href="privacypolicy.html">Privacy Policy</a></p>
+</section>
+
+<!--JavaScript for toggle menu  -->
+<script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right= "0";
+    }
+    function hideMenu(){
+        navLinks.style.right= "-200px";
+    }
+</script>
+
+</body>
+</html>
