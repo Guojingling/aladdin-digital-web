@@ -315,7 +315,7 @@ background: rgba(211, 0, 0, 0.2);
 /* Call To action */
 .cta{
   margin: 100px auto;
-  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(./img/banner2.jpg);
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/indexbackgroundtop.png);
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -385,7 +385,7 @@ background: rgba(211, 0, 0, 0.2);
   height: 20vh;
   text-align: center;
   /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(./img/photoofworking.jpg); */
-  background-image: linear-gradient(#F4F5F7,#F4F5F7),url(img/indexbackgroundtop.png);
+  background-image: linear-gradient(#F4F5F7,#F4F5F7),url(../img/indexbackgroundtop.png);
   background-size: cover;
   background-position: center;
   width: 100%;
