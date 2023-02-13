@@ -162,6 +162,10 @@ a{
   justify-content: space-between;
   color:#3e3e3e;
 }
+
+.row h3{
+  text-align: left;
+}
 .course-col{
   flex-basis: 31%;
   background: #dbc79a;
