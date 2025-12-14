@@ -5,8 +5,9 @@ let htmlDocHeader = `<section class="sub-header">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
             <li><a href="service.html">Our Services</a></li>
+            <li><a href="commitment.html">Our Commitment</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </div>

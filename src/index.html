@@ -8,86 +8,83 @@ was greatly influential on the design of this Aladdin Digital webpage-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aladdin Digital</title>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/card.css">
+        <link rel="stylesheet" href="css/aos.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-<body>
-    
+<body class="snap-scroll">
 <script language="javascript" type="text/javascript"  src="JavaScripts/header.js"></script>
     
-
-    
+<section class="hero page-section">
+    <h2>Aladdin Digital</h2>
+    <p>Your Trusted Tech Partner</p>
+</section>
     <!--OUR SERVICES-->
-    <section class="facilities">
+    <section class="facilities page-section">
         <div class="row">           
             <p>Aladdin Digital is an IT recruitment and consulting firm Based in Canberra with focus on providing IT talent and technical solutions to IT projects in Canberra region.                     
             </p>           
         </div>  
-        <h1>Our Specialisations</h1>
-        <p>At Aladdin Digital, we offer a range of IT talents to assist IT projects, our focus is on three technical capabilities.</p>
-        <div class="row">
-            <div class="facilities-col">
-                <img src="./img/devops.png" width="601", height="557" alt="DevOps image">
-                <h3>Application Solutions</h3>
-                <p>
-                    Driven by business opportunities, our specialists assist client with cutting edge technologies and deliver great user experience.
-                </p>
+        <div class="Course">
+            <h1>Our Specialisations</h1>
+            <p>At Aladdin Digital, we offer a range of IT talents to assist IT projects, our focus is on three technical capabilities.</p>
+        </div>
+        <div class="cards-container">
+            <div class="card" style="background-image: url('./img/desertwave.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Application Solutions</h3>
+                    <p class="card-summary">Following business requirements and user demands, our specialists design and deliver high-performance application solutions with cutting-edge technology. We leverage modern technologies and human-centred design to create intuitive systems that streamline operations, enhance user experience and increase business value.</p>
+                </div>
             </div>
-            <div class="facilities-col">
-                <img src="./img/fullstack.png" width="677" height="472" alt="computer image">
-                <h3>Production Support</h3>
-                <p>Based on business model and patterns, our support experts provide tailored plan for business continuity and cost-effective roadmap for future growth.
-                </p>
+            <div class="card" style="background-image: url('./img/lamps.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Production Support</h3>
+                    <p class="card-summary">Our production support services focus on business continuity and operational efficiency. By analysing business workflows and system usage patterns, we develop tailored support models and cost-effective roadmaps to ensure system stability and sustainable growth.</p>
+                </div>
             </div>
-            <div class="facilities-col">
-                <img src="./img/azure.png" width="671" height="662" alt="Azure logo">
-                    <h3>AI innovation</h3>
-                    <p> Inspired by business vision, we assist client with AI implementation with leading technologies in AWS and Azure.
-                        
-
-                    </p>
+            <div class="card" style="background-image: url('./img/sparkles.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h3 class="card-title">AI Innovation</h3>
+                    <p class="card-summary">Inspired by our clients' visions, we assist organisations in implementing artificial intelligence solutions using leading technologies from AWS and Azure. Our AI experts transform complex data into strategic insights, fostering innovation and competitive edge.</p>
+                </div>
             </div>
         </div>
       
     </section>
    
 
-    <hr width = "100%" size = "1.5" color = "#A7A7A7">
-
 <!-- testmonials -->
-<section class="testmonial">
+<section class="testmonial page-section">
     <h1>What our clients say</h1>
     <p></p>
     <div class="row">
         <div class="testmonial-col">
             <img src="./img/blankuser.png">
             <div>
-                <p>"Aladdin Digital has provided professional service and help us recruit competent solution architect and developers"
+                <p>"We engaged Aladdin Digital for professional services, and they helped us recruit highly capable Solution Architects and Developers."
                 </p>
                 <h3>Sue</h3>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>            
             </div>
         </div>
         <div class="testmonial-col">
             <img src="./img/blankuser.png">
             <div>
-                <p>"Aladdin Digital has provided professional service and help us recruit three highly skilled React developers"
+                <p>"Aladdin Digital has provided professional service and help us recruit three highly skilled React developers."
                 </p>
                 <h3>John</h3>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>  
             </div>
         </div>
     </div>
 </section>
 
 <!-- Call To action -->
-<section class="cta">
+<section class="cta page-section">
     <h1>Feeling interested in our services?</h1>    
         <h1>Don't hesitate to Contact Us today</h1>
         <a href="contactus.html" class="hero-btncta">Contact Us</a>
@@ -104,6 +101,19 @@ was greatly influential on the design of this Aladdin Digital webpage-->
         function hideMenu(){
             navLinks.style.right= "-200px";
         }
+        const sections = document.querySelectorAll('.page-section');
+        const setActive = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+        const observer = new IntersectionObserver(setActive, {
+            root: null,
+            threshold: 0.35
+        });
+        sections.forEach(sec => observer.observe(sec));
     </script>  
 </body>
 </html>

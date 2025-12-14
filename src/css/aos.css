@@ -1,0 +1,119 @@
+/* =========================================================
+   PAGE SECTION (Full-screen flip + fade)
+   ========================================================= */
+
+.page-section {
+  position: relative;
+  min-height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5em;
+
+  /* Start state */
+  opacity: 0;
+  transform: translateY(80px) rotateX(15deg);
+  transition: 
+    opacity 1.0s ease-out,
+    transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+}
+
+.page-section.active {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* =========================================================
+   WHITE FADE OVERLAY
+   ========================================================= */
+
+.page-section::before {
+  content: none;
+}
+
+/* =========================================================
+   TEXT CONTENT (above fade)
+   ========================================================= */
+.page-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========= HEADINGS ========= */
+
+.page-section h2,
+.page-section h3 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-weight: 800;
+  color: #1a202c;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out 0.3s,
+    transform 0.8s ease-out 0.3s;
+}
+
+.page-section h2 {
+  font-size: 5rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.page-section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e2c66b, #d4af37);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* H3 slightly smaller */
+.page-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Active state */
+.page-section.active h2,
+.page-section.active h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========= PARAGRAPH ========= */
+.page-section p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: #4a5568;
+
+  max-width: 750px;
+  margin: 1rem auto;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out 0.5s,
+    transform 0.8s ease-out 0.5s;
+}
+
+.page-section.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-section p:hover {
+  color: #2d3748;
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+}

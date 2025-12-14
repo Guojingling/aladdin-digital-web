@@ -1,11 +1,11 @@
 
 let htmlDocForFooter = `<section class="testmonial"><div class="row"><div class="testmonial-col"><img src="./img/services.png"> 
             <div>
-                <h3>Our Services</h3>
+                <h3>What We Do</h3>
                 <ul style="list-style-type: disc">
                     <li>DevOps Engineering</li>
-                    <li>Full Stack Development</li>
-                    <li>Azure infrastructure Design</li>
+                    <li>Full-stack Development</li>
+                    <li>Azure Infrastructure Design</li>
                     <li>Quality Assurance Management</li>
                 </ul>
             </div>
@@ -18,14 +18,11 @@ let htmlDocForFooter = `<section class="testmonial"><div class="row"><div class=
                     <li>40 Printers Way, Kingston 2604 ACT</li>
                     <li>+(61) 419 483 619</li>
                     <li>admin@aladdindigital.com.au</li>
-                    <li>
-                        <div class="icons">
-                            <i class="fa fa-facebook"></i>
-                            <i class="fa fa-wechat"></i>
-                            <i class="fa fa-instagram"></i>
-                            <i class="fa fa-linkedin"></i>
-                        </div>
-                    </li>
+                    <div class="icons">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-wechat"></i>
+                    </div>
                 </ul>
             </div>
         </div>
