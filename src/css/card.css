@@ -35,7 +35,7 @@
 }
 
 .service-hero-compact{
-  padding: 100px 8vw 60px;
+  padding: 80px 8vw 40px;
   min-height: auto;
 }
 
@@ -57,8 +57,10 @@
 }
 
 .services-hero-header{
-  max-width: 880px;
+  width: 80%;
+  max-width: 1100px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .services-hero-header h1{
@@ -66,8 +68,9 @@
 }
 
 .service-page-hero .services-hero-header{
-  max-width: 760px;
-  padding: 0 12px;
+  max-width: 1100px;
+  width: 80%;
+  padding: 0;
 }
 
 .eyebrow-tag{
@@ -102,8 +105,8 @@
 
 .service-areas{
   width: 80%;
-  margin: 8px auto 0;
-  padding: 12px 0 10px;
+  margin: 0 auto;
+  padding: 4px 0 8px;
 }
 
 .service-areas-shell{
@@ -189,6 +192,7 @@
   list-style: none;
   padding: 12px 14px;
   border-radius: 10px;
+  border: 1px solid rgba(207,165,75,0.32);
   transition: background-color 0.2s ease, color 0.2s ease;
   outline: none;
 }
@@ -199,11 +203,13 @@
 
 .service-area summary:hover{
   background: #f8f7f3;
+  border-color: transparent;
 }
 
 .service-area[open] summary{
   background: #f8f7f3;
   color: #cfa54b;
+  border-color: transparent;
 }
 
 .service-area p{
@@ -285,7 +291,7 @@
       grid-template-columns: 1fr;
   }
   .service-hero-compact{
-      padding: 110px 24px 80px;
+      padding: 80px 24px 50px;
   }
 }
 
