@@ -67,6 +67,10 @@
   margin-bottom: 14px;
 }
 
+.services-hero-header p{
+  font-weight: 400;
+}
+
 .service-page-hero .services-hero-header{
   max-width: 1100px;
   width: 80%;
@@ -345,7 +349,7 @@
 
 .card-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 30px;
   transition: all 0.3s ease;
   color: white !important;
 }
@@ -353,8 +357,9 @@
 .card-summary {
   opacity: 0;
   max-height: 0;
-  margin: 10px 20px 0;
-  font-size: 1rem;
+  margin: 10px 10px 0;
+  font-size: 18px;
+  line-height: 1.6;
   transition: all 0.3s ease;
   overflow: hidden;
   color: white;
@@ -408,6 +413,8 @@
   .cards-container{
       flex-direction: column;
       gap: 16px;
+      width: 96%;
+      margin: 0 auto;
   }
   .card{
       flex: 1 1 100%;
@@ -425,5 +432,25 @@
   }
   .card:hover .card-summary{
       transform: translateY(-8px);
+  }
+  .card-title{
+      font-size: 28px;
+  }
+  .card-summary{
+      font-size: 15px;
+      line-height: 1.55;
+  }
+}
+
+@media(max-width: 540px){
+  .cards-container{
+      width: 98%;
+  }
+  .card-title{
+      font-size: 24px;
+  }
+  .card-summary{
+      font-size: 14px;
+      line-height: 1.5;
   }
 }

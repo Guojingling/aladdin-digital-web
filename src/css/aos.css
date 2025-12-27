@@ -74,12 +74,6 @@
   border-radius: 2px;
 }
 
-/* H3 slightly smaller */
-.page-section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-}
-
 /* Active state */
 .page-section.active h2,
 .page-section.active h3 {
@@ -88,13 +82,11 @@
 }
 
 /* ========= PARAGRAPH ========= */
-.page-section p {
+.page-section > p {
   font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
   line-height: 1.75;
   color: #4a5568;
 
-  max-width: 750px;
   margin: 1rem auto;
   text-align: center;
 
@@ -105,12 +97,12 @@
     transform 0.8s ease-out 0.5s;
 }
 
-.page-section.active p {
+.page-section.active > p {
   opacity: 1;
   transform: translateY(0);
 }
 
-.page-section p:hover {
+.page-section > p:hover {
   color: #2d3748;
 }
 
