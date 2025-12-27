@@ -48,6 +48,43 @@ html, body{
   transition: height 0.5s ease, padding 0.5s ease;
   overflow: hidden;
 }
+.hero-scroll-indicator{
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 2px solid rgba(244,245,247,0.85);
+  background: rgba(62,62,62,0.18);
+  backdrop-filter: blur(2px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: hero-indicator-float 1.4s ease-in-out infinite;
+}
+.hero-scroll-indicator:hover{
+  background: rgba(207,165,75,0.22);
+  border-color: rgba(207,165,75,0.95);
+}
+.hero-scroll-arrow{
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid rgba(244,245,247,0.95);
+  border-bottom: 3px solid rgba(244,245,247,0.95);
+  transform: rotate(45deg);
+  margin-top: -4px;
+}
+.hero-scroll-indicator:hover .hero-scroll-arrow{
+  border-right-color: rgba(244,245,247,1);
+  border-bottom-color: rgba(244,245,247,1);
+}
+@keyframes hero-indicator-float{
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
 .hero h2{
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -72,29 +109,36 @@ html, body{
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
+
 .snap-scroll .page-section{
   opacity: 0;
   transform: translateY(36px);
   transition: transform 0.6s ease, opacity 0.6s ease;
   will-change: transform, opacity;
+  scroll-snap-align: start;
 }
+
 .snap-scroll .page-section.active{
   opacity: 1;
   transform: translateY(0);
 }
+
 .snap-scroll .page-section.hero{
   opacity: 1;
   transform: none;
 }
+
 @media (prefers-reduced-motion: reduce){
   .snap-scroll .page-section{
     transition: none;
     transform: none;
+    opacity: 1;
+  }
+  .hero-scroll-indicator{
+    animation: none;
   }
 }
-.snap-scroll .page-section{
-  scroll-snap-align: start;
-}
+
 .header{
     /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(./img/background.jpg); */
   background-image: linear-gradient(#F4F5F7,#F4F5F7),url(../img/indexbackgroundtop.png);
@@ -205,6 +249,11 @@ nav .fa{
     height: 60vh;
     height: clamp(320px, 60vh, 520px);
   }
+  .hero-scroll-indicator{
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+  }
   .text-box h1{
       font-size: 20px;
   }
@@ -261,11 +310,160 @@ padding: 10px;
 a{
   color:#CFA54B;
 }
+
+/* Responsive adjustments */
+@media(max-width: 1024px){
+  .Course,
+  .campus,
+  .facilities,
+  .testmonial,
+  .contact-us,
+  .location,
+  .commitment,
+  .about-us,
+  .Pp,
+  .footer{
+    width: 92%;
+  }
+  .facilities.full-bleed,
+  .location.full-bleed,
+  .contact-us.full-bleed,
+  .commitment.full-bleed{
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  nav{
+    padding: 12px 16px;
+  }
+  body{
+    padding-top: 72px;
+  }
+  nav img{
+    width: 170px;
+  }
+  h1{
+    font-size: 30px;
+  }
+  h2{
+    font-size: 36px;
+  }
+  p{
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .hero{
+    padding: 32px 12px;
+  }
+  .hero h2{
+    font-size: clamp(28px, 6vw, 34px);
+  }
+  .hero p{
+    font-size: 16px;
+    padding: 0 12px;
+  }
+  .text-box{
+    width: 96%;
+    top: 55%;
+    padding: 0 12px;
+  }
+  .nav-links ul li a{
+    font-size: 15px;
+  }
+  .course-col,
+  .facilities-col,
+  .campus-col,
+  .testmonial-col,
+  .contact-col,
+  .about-col{
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .course-col,
+  .facilities-col,
+  .campus-col,
+  .testmonial-col{
+    margin-bottom: 28px;
+  }
+}
+
+@media(max-width: 700px){
+  body{
+    padding-top: 68px;
+  }
+  nav img{
+    width: 150px;
+  }
+  .text-box h1{
+    font-size: 22px;
+  }
+  .text-box p{
+    font-size: 18px;
+  }
+  .cta{
+    padding: 28px 16px;
+    min-height: 320px;
+  }
+  .cta h1{
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+  .hero-btn,
+  .hero-btncta{
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+  .testmonial .row{
+    gap: 18px;
+  }
+}
+
+@media(max-width: 540px){
+  nav{
+    padding: 10px 12px;
+  }
+  nav img{
+    width: 134px;
+  }
+  body{
+    padding-top: 64px;
+  }
+  h1{
+    font-size: 26px;
+  }
+  h2{
+    font-size: 28px;
+  }
+  p{
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .hero{
+    height: clamp(300px, 58vh, 480px);
+  }
+  .hero p{
+    padding: 0 6px;
+  }
+  .Course,
+  .campus,
+  .facilities,
+  .testmonial,
+  .contact-us,
+  .location,
+  .commitment,
+  .about-us,
+  .Pp,
+  .footer{
+    width: 94%;
+  }
+}
 .row{
   margin-top: 5%;
   display: flex;
   justify-content: space-between;
   color:#3e3e3e;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .row h3,h4{
@@ -397,15 +595,27 @@ background: rgba(211, 0, 0, 0.2);
   text-align: center;
   padding-top: 60px;
 }
+.testmonial .row{
+  margin-top: 36px;
+}
 .testmonial-col{
   flex-basis: 44%;
   background: #F4F5F7;
   border-radius: 10px;
+  border: 1px solid rgba(94,95,97,0.18);
   margin-bottom: 2%;
   text-align: left;
   padding: 25px;
   cursor: pointer;
   display: flex;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.testmonial-col:hover,
+.testmonial-col:focus-within{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.12);
+  border-color: rgba(207,165,75,0.6);
 }
 .testmonial-col img{
   height: 50px;
