@@ -17,7 +17,7 @@ let htmlDocForFooter = `<section class="testmonial"><div class="row"><div class=
                 <ul style="list-style-type: disc">
                     <li>40 Printers Way, Kingston 2604 ACT</li>
                     <li>+(61) 419 483 619</li>
-                    <li>admin@aladdindigital.com.au</li>
+                    <li><a href="mailto:admin@aladdindigital.com.au">admin@aladdindigital.com.au</a></li>
                     <div class="icons">
                         <i class="fa fa-facebook"></i>
                         <i class="fa fa-linkedin"></i>
