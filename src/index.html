@@ -7,9 +7,10 @@ was greatly influential on the design of this Aladdin Digital webpage-->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aladdin Digital</title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/card.css">
-        <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
@@ -17,53 +18,61 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     <link rel="icon" href="img/favoricon.png">
     </head>
 <body class="snap-scroll home-page">
+<div class="home-bg-layer" aria-hidden="true"></div>
 <script language="javascript" type="text/javascript"  src="JavaScripts/header.js"></script>
     
 <section class="hero page-section">
     <h2>Aladdin Digital</h2>
     <p>Your Trusted Tech Partner</p>
-    <a class="hero-scroll-indicator" href="#specialisations" aria-label="Swipe up to view content">
-        <span class="hero-scroll-arrow" aria-hidden="true"></span>
-    </a>
 </section>
-    <!--OUR SERVICES-->
-    <section class="facilities page-section" id="specialisations">
-        <div class="Course">
+<!--OUR SERVICES-->
+    <section class="facilities page-section" id="specialisations" data-bg="#FAC842">
+        <div class="Course service-cta-header">
             <h1>Our Specialisations</h1>
-            <p>Aladdin Digital is a Canberra-based IT recruitment and consulting firm, delivering specialised IT talent and technical solutions to support projects across the region.
+            <p>Aladdin Digital is a Canberra-based IT recruitment and consulting firm, delivering specialised IT talent and technical solutions and supporting projects across the region.
             </p>
             <p>Our approach focuses on matching the right expertise to project needs, underpinned by three key technical capability areas.
             </p>
         </div>
-        <div class="cards-container">
-            <div class="card" style="background-image: url('./img/desertwave.jpg');">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Application Solutions</h3>
-                    <p class="card-summary">Following business requirements and user demands, our specialists design and deliver high-performance application solutions with cutting-edge technology. We leverage modern technologies and human-centred design to create intuitive systems that streamline operations, enhance user experience and increase business value.</p>
-                </div>
-            </div>
-            <div class="card" style="background-image: url('./img/lamps.jpg');">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Production Support</h3>
-                    <p class="card-summary">Our production support services focus on business continuity and operational efficiency. By analysing business workflows and system usage patterns, we develop tailored support models and cost-effective roadmaps to ensure system stability and sustainable growth.</p>
-                </div>
-            </div>
-            <div class="card" style="background-image: url('./img/sparkles.jpg');">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <h3 class="card-title">AI Innovation</h3>
-                    <p class="card-summary">Inspired by our clients' visions, we assist organisations in implementing artificial intelligence solutions using leading technologies from AWS and Azure. Our AI experts transform complex data into strategic insights, fostering innovation and competitive edge.</p>
-                </div>
-            </div>
-        </div>
-      
     </section>
    
+    <section class="commitment-intro">
+        <div class="commitment-intro-grid row g-4 align-items-start">
+            <div class="commitment-intro-content col-12 col-lg-6">
+                <h2>Application Solutions</h2>
+                <p>Following business requirements and user demands, our specialists design and deliver high-performance application solutions with cutting-edge technology. We leverage modern technologies and human-centred design to create intuitive systems that streamline operations, enhance user experience and increase business value.</p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img class="about-lamp img-fluid" src="./img/desertwave.jpg" alt="Coast near desert">
+            </div>
+        </div>
+    </section>
+    <section class="commitment-intro">
+        <div class="commitment-intro-grid row g-4 align-items-start">
+            <div class="col-12 col-lg-6">
+                <img class="about-lamp img-fluid" src="./img/highway.jpg" alt="Highway through desert">
+            </div>
+            <div class="commitment-intro-content col-12 col-lg-6">
+                <h2>Production Support</h2>
+                <p>Our production support services focus on business continuity and operational efficiency. By analysing business workflows and system usage patterns, we develop tailored support models and cost-effective roadmaps to ensure system stability and sustainable growth.</p>
+                
+            </div>
+        </div>
+    </section>
+    <section class="commitment-intro">
+        <div class="commitment-intro-grid row g-4 align-items-start">
+            <div class="commitment-intro-content col-12 col-lg-6">
+                <h2>AI Innovation</h2>
+                <p>Inspired by our clients' visions, we assist organisations in implementing artificial intelligence solutions using leading technologies from AWS and Azure. Our AI experts transform complex data into strategic insights, fostering innovation and competitive edge.</p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img class="about-lamp img-fluid" src="./img/motor.jpg" alt="motor in desert sunset">
+            </div>
+        </div>
+    </section>
 
 <!-- testmonials -->
-<section class="testmonial page-section">
+<section class="testmonial page-section" id="testimonials" data-bg="#FAC842">
     <h1>What our clients say</h1>
     <div class="row">
         <div class="testmonial-col">
@@ -86,8 +95,9 @@ was greatly influential on the design of this Aladdin Digital webpage-->
 </section>
 
 <!-- Call To action -->
-<section class="cta page-section">
-    <h1>Interested in our services?</h1>    
+<section class="cta page-section" id="cta">
+    <h1>Interested in our services?</h1> 
+    <h1>Light the magic lamp and start your journey</h1>   
     <a href="contactus.html" class="hero-btncta">Contact Us</a>
 </section>
 
@@ -115,6 +125,51 @@ was greatly influential on the design of this Aladdin Digital webpage-->
             threshold: 0.35
         });
         sections.forEach(sec => observer.observe(sec));
+
+        const bodyEl = document.body;
+        const defaultBg = '#202946';
+        const bgSections = Array.from(document.querySelectorAll('.page-section[data-bg]'));
+        const setBodyBackground = (entries) => {
+            const visible = entries
+                .filter(entry => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (!visible.length) {
+                return;
+            }
+            const bg = visible[0].target.getAttribute('data-bg');
+            if (bg) {
+                bodyEl.style.backgroundColor = bg;
+            }
+        };
+        const bgObserver = new IntersectionObserver(setBodyBackground, {
+            root: null,
+            threshold: [0.15, 0.35, 0.5, 0.75]
+        });
+        bgSections.forEach(sec => bgObserver.observe(sec));
+        bodyEl.style.backgroundColor = defaultBg;
+
+        const valleySections = document.querySelectorAll('#specialisations, #testimonials');
+        const setValleyBackground = (entries) => {
+            const isActive = entries.some(entry => entry.isIntersecting);
+            bodyEl.classList.toggle('home-valley-active', isActive);
+        };
+        const valleyObserver = new IntersectionObserver(setValleyBackground, {
+            root: null,
+            threshold: 0.2
+        });
+        valleySections.forEach(sec => valleyObserver.observe(sec));
+
+        const hero = document.querySelector('.hero');
+        const updateHeroDarken = () => {
+            if (!hero) {
+                return;
+            }
+            const maxScroll = hero.offsetHeight;
+            const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+            hero.style.setProperty('--hero-darken', progress.toFixed(3));
+        };
+        updateHeroDarken();
+        window.addEventListener('scroll', updateHeroDarken, { passive: true });
     </script>  
 </body>
 </html>

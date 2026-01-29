@@ -4,7 +4,7 @@
 
 .page-section {
   position: relative;
-  min-height: auto;
+  min-height: calc(100vh - var(--nav-offset, 80px));
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,32 @@
     opacity 1.0s ease-out,
     transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
   overflow: hidden;
+}
+
+/* Stacked sections: split viewport between testimonials and CTA as one screen */
+.page-section.testmonial {
+  min-height: calc(60vh - var(--nav-offset, 80px) / 2);
+}
+
+.page-section.cta {
+  min-height: calc(40vh - var(--nav-offset, 80px) / 2);
+}
+
+.snap-scroll .page-section.cta {
+  scroll-snap-align: none;
+}
+
+/* Place scroll indicator near bottom for all sections */
+.page-section .hero-scroll-indicator {
+  position: absolute;
+  left: 28px;
+  bottom: 18px;
+  transform: none;
+}
+
+/* Nudge second screen's indicator lower for spacing */
+.facilities .hero-scroll-indicator {
+  bottom: 0px;
 }
 
 .page-section.active {

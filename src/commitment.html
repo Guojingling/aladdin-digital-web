@@ -13,40 +13,55 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="commitment-page commitment-page-cactus">
     <script language="javascript" type="text/javascript" src="JavaScripts/header.js"></script>
 
-    <section class="commitment page-surface full-bleed">
-        <div class="commitment-header">
+    <section class="commitment-hero page-surface full-bleed">
+        <div class="commitment-heading">
             <h1>Our Commitment</h1>
+        </div>
+    </section>
+
+    <section class="commitment-intro">
+        <div class="commitment-header">
+            <p>Aladdin embodies the wisdom of a cactus. We are resilient, adaptive, and capable of thriving while exploring the digital desert. Technology is our source of vitality. By delivering intelligent solutions with exceptional talent, we empower enterprises to transform, evolve, and grow sustainably.</p>
             <p>Since 2019, we have built a reputation as a trusted IT consulting partner in Canberra. Every engagement is guided by our core principles: Client Success, Effective Delivery, Security First, Ethics leading, and People & Growth.</p>
         </div>
     </section>
 
     <section class="commitment-cards full-bleed">
-        <div class="commitment-grid">
-            <div class="commitment-card">
-                <h3>Client Success</h3>
-                <p>We prioritise the success of our clients across both the public and private sectors, ensuring our solutions are designed with quality, value and long-term outcomes in mind.</p>
+        <div class="commitment-carousel" aria-label="Commitment principles carousel">
+            <button class="commitment-control commitment-control-prev" type="button" aria-label="Previous commitment card">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <div class="commitment-viewport">
+                <div class="commitment-track">
+                    <div class="commitment-card">
+                        <h3><i class="fa fa-handshake-o commitment-icon" aria-hidden="true"></i>Client Success</h3>
+                        <p>We prioritise the success of our clients across both the public and private sectors, ensuring our solutions are designed with quality, value and long-term outcomes in mind.</p>
+                    </div>
+                    <div class="commitment-card">
+                        <h3><i class="fa fa-check-circle commitment-icon" aria-hidden="true"></i>Effective Delivery</h3>
+                        <p>We work seamlessly with both the business and technical stakeholders to deliver projects efficiently. We provide clear communication, transparent risk identification, and comprehensive handover and ongoing support.</p>
+                    </div>
+                    <div class="commitment-card">
+                        <h3><i class="fa fa-shield commitment-icon" aria-hidden="true"></i>Security First</h3>
+                        <p>We deliver solutions that align with security best practices and our clients’ governance requirements, across both local and cloud platforms. We are willing to provide professionals with security clearance, and we always offer pre-engagement training covering privacy, cybersecurity, and WHS awareness.</p>
+                    </div>
+                    <div class="commitment-card">
+                        <h3><i class="fa fa-balance-scale commitment-icon" aria-hidden="true"></i>Ethics Leading</h3>
+                        <p>We operate with strong social and corporate responsibility, strictly upholding procurement principles that support Indigenous Entities, contribute to the Australian Economy, prevent Modern Slavery and promote Environmentally Sustainable practices.</p>
+                    </div>
+                    <div class="commitment-card">
+                        <h3><i class="fa fa-users commitment-icon" aria-hidden="true"></i>People & Growth</h3>
+                        <p>We invest in the growth and wellbeing of our people. Through structured training, peer support, knowledge sharing and ongoing wellbeing and health initiatives, we foster a supportive environment that enables our teams and our clients to grow and succeed.</p>
+                    </div>
+                </div>
             </div>
-            <div class="commitment-card">
-                <h3>Effective Delivery</h3>
-                <p>We work seamlessly with both the business and technical stakeholders to deliver projects efficiently. We provide clear communication, transparent risk identification, and comprehensive handover and ongoing support.</p>
-            </div>
-            <div class="commitment-card">
-                <h3>Security First</h3>
-                <p>We deliver solutions that align with security best practices and our clients’ governance requirements, across both local and cloud platforms. We are willing to provide professionals with security clearance, and we always offer pre-engagement training covering privacy, cybersecurity, and WHS awareness.</p>
-            </div>
-            <div class="commitment-card">
-                <h3>Ethics Leading</h3>
-                <p>We operate with strong social and corporate responsibility, strictly upholding procurement principles that support Indigenous Entities, contribute to the Australian Economy, prevent Modern Slavery and promote Environmentally Sustainable practices.</p>
-            </div>
-            <div class="commitment-card">
-                <h3>People & Growth</h3>
-                <p>We invest in the growth and wellbeing of our people. Through structured training, peer support, knowledge sharing and ongoing wellbeing and health initiatives, we foster a supportive environment that enables our teams and our clients to grow and succeed.</p>
-            </div>
+            <button class="commitment-control commitment-control-next" type="button" aria-label="Next commitment card">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
         </div>
-
     </section>
 
 <script language="javascript" type="text/javascript" src="JavaScripts/footer.js"></script>
@@ -60,6 +75,161 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     function hideMenu(){
         navLinks.style.right= "-200px";
     }
+</script>
+<script>
+    (function(){
+        var carousel = document.querySelector(".commitment-carousel");
+        if (!carousel) return;
+
+        var track = carousel.querySelector(".commitment-track");
+        var viewport = carousel.querySelector(".commitment-viewport");
+        var prevBtn = carousel.querySelector(".commitment-control-prev");
+        var nextBtn = carousel.querySelector(".commitment-control-next");
+        var baseCards = Array.prototype.slice.call(track.children);
+        var index = 0;
+        var timerId = null;
+        var step = 0;
+        var perView = 1;
+        var isDragging = false;
+        var startX = 0;
+
+        function getPerView(){
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function getGap(){
+            var styles = window.getComputedStyle(track);
+            var gapValue = parseFloat(styles.columnGap || styles.gap || 0);
+            return isNaN(gapValue) ? 0 : gapValue;
+        }
+
+        function setTransform(animate){
+            if (animate) {
+                track.style.transition = "transform 0.5s ease";
+            } else {
+                track.style.transition = "none";
+            }
+            track.style.transform = "translateX(-" + (index * step) + "px)";
+        }
+
+        function clearClones(){
+            Array.prototype.slice.call(track.querySelectorAll(".commitment-card.is-clone"))
+                .forEach(function(node){ node.remove(); });
+            baseCards.forEach(function(card){ track.appendChild(card); });
+        }
+
+        function createClones(){
+            var cards = Array.prototype.slice.call(track.children);
+            var head = cards.slice(0, perView);
+            var tail = cards.slice(-perView);
+            tail.forEach(function(card){
+                var clone = card.cloneNode(true);
+                clone.classList.add("is-clone");
+                track.insertBefore(clone, track.firstChild);
+            });
+            head.forEach(function(card){
+                var clone = card.cloneNode(true);
+                clone.classList.add("is-clone");
+                track.appendChild(clone);
+            });
+        }
+
+        function updateSizes(){
+            var cards = Array.prototype.slice.call(track.children);
+            if (!cards.length) return;
+            var cardWidth = cards[0].getBoundingClientRect().width;
+            step = cardWidth + getGap();
+        }
+
+        function setup(){
+            perView = getPerView();
+            viewport.style.setProperty("--cards-per-view", perView);
+            if (window.innerWidth >= 1024) {
+                viewport.style.setProperty("--cards-visible", 3);
+            } else if (window.innerWidth >= 768) {
+                viewport.style.setProperty("--cards-visible", 2.5);
+            } else {
+                viewport.style.setProperty("--cards-visible", 1.2);
+            }
+            clearClones();
+            createClones();
+            updateSizes();
+            index = perView;
+            setTransform(false);
+        }
+
+        function move(delta){
+            index += delta;
+            setTransform(true);
+        }
+
+        function onTransitionEnd(){
+            var total = baseCards.length;
+            if (index >= total + perView) {
+                index = perView;
+                setTransform(false);
+            }
+            if (index < perView) {
+                index = total + perView - 1;
+                setTransform(false);
+            }
+        }
+
+        function startAuto(){
+            stopAuto();
+            timerId = window.setInterval(function(){
+                move(1);
+            }, 4500);
+        }
+
+        function stopAuto(){
+            if (timerId) {
+                window.clearInterval(timerId);
+                timerId = null;
+            }
+        }
+
+        function onPointerDown(e){
+            isDragging = true;
+            startX = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || 0;
+        }
+
+        function onPointerUp(e){
+            if (!isDragging) return;
+            var endX = e.clientX || (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX) || 0;
+            var deltaX = endX - startX;
+            isDragging = false;
+            if (Math.abs(deltaX) > 40) {
+                move(deltaX < 0 ? 1 : -1);
+            }
+        }
+
+        setup();
+        startAuto();
+
+        window.addEventListener("resize", function(){
+            window.clearTimeout(window.__commitmentResize);
+            window.__commitmentResize = window.setTimeout(function(){
+                setup();
+            }, 150);
+        });
+
+        track.addEventListener("transitionend", onTransitionEnd);
+        nextBtn.addEventListener("click", function(){ move(1); startAuto(); });
+        prevBtn.addEventListener("click", function(){ move(-1); startAuto(); });
+
+        viewport.addEventListener("mouseenter", stopAuto);
+        viewport.addEventListener("mouseleave", startAuto);
+        viewport.addEventListener("focusin", stopAuto);
+        viewport.addEventListener("focusout", startAuto);
+        viewport.addEventListener("touchstart", onPointerDown, { passive: true });
+        viewport.addEventListener("touchend", onPointerUp);
+        viewport.addEventListener("mousedown", onPointerDown);
+        viewport.addEventListener("mouseup", onPointerUp);
+        viewport.addEventListener("mouseleave", function(){ isDragging = false; });
+    })();
 </script>
 
 </body>

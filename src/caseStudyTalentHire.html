@@ -14,14 +14,29 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="case-study-page">
     <script language="javascript" type="text/javascript" src="JavaScripts/header.js"></script>
 
     <section class="commitment page-surface full-bleed">
         <div class="commitment-header" style="text-align: left;">
-            <h1>Case Study: Talent hire, recruitment and related services</h1>
-            <p>Aladdin supported a government agency by recruiting a highly skilled Full Stack Developer for its ICT Migration Project. Aladdin sourced and screened three candidates, shortlisted one, and prepared them for the agency’s interview through technical coaching and role briefing. After confirmation of placement, Aladdin managed onboarding, payroll and compliance checks, and provided ongoing weekly support and performance monitoring. The placed developer successfully delivered key project tasks on time, demonstrated strong integration and development capability and received positive feedback, leading to a contract extension and continued confidence in Aladdin’s recruitment services.</p>
-            <p>Other details and cases coming soon.</p>
+            <h2>Talent hire, recruitment and related services</h2>
+            <p>Aladdin Digital offers comprehensive labour hire and recruitment services to provide highly skilled IT professionals to government clients. Our services include role scoping, candidate sourcing, technical screening, security and work-rights verification, interview preparation, onboarding and ongoing performance monitoring. We can deliver both seller-sourced and buyer-sourced labour hire models and can also supply seller-sourced workers under buyer-managed arrangements. Our recruitment approach focuses on technical merit, compliance with government standards and long-term capability uplift and we source personnel with strong expertise in solution design, technical implementation and BAU support.</p>
+            <div class="case-accordion-group" data-accordion-group>
+                <div class="case-accordion">
+                    <button class="case-accordion__trigger" type="button" aria-expanded="true">Case Study 1: Full Stack Developer for ICT Migration Project</button>
+                    <div class="case-accordion__panel">
+                        <p>Aladdin supported a government agency by recruiting a highly skilled Full Stack Developer for its ICT Migration Project. Aladdin sourced and screened three candidates, shortlisted one, and prepared them for the agency’s interview through technical coaching and role briefing. After confirmation of placement, Aladdin managed onboarding, payroll and compliance checks, and provided ongoing weekly support and performance monitoring. The placed developer successfully delivered key project tasks on time, demonstrated strong integration and development capability and received positive feedback, leading to a contract extension and continued confidence in Aladdin’s recruitment services.</p>
+                    </div>
+                </div>
+
+                <div class="case-accordion">
+                    <button class="case-accordion__trigger" type="button" aria-expanded="false">Case Study 2: Senior Technical Lead for Governmental Agency</button>
+                    <div class="case-accordion__panel" hidden>
+                        <p>Aladdin supported an Australian Government Agency by sourcing a Senior Technical Lead for its major ICT transformation initiative that had urgent delivery deadlines. Prior to engaging Aladdin, the role had been advertised nationally for a substantial period. Aladdin screened multiple candidates and provided a suitably qualified, security cleared candidate within three weeks. Aladdin managed onboarding, payroll and ongoing performance monitoring to support the placed candidate and the AEC. </p>
+                        <p>The contractor recently had their contract extended for a further 12 months due to quality performance and project impact.</p>
+                    </div>
+                </div>
+            </div>
             <p class="service-card-action">
                 <a class="hero-btn service-card-btn" href="service.html">Back to Services</a>
             </p>
@@ -39,6 +54,28 @@ was greatly influential on the design of this Aladdin Digital webpage-->
         function hideMenu(){
             navLinks.style.right= "-200px";
         }
+    </script>
+    <script>
+        const accordionGroups = document.querySelectorAll('[data-accordion-group]');
+        accordionGroups.forEach((group) => {
+            const triggers = Array.from(group.querySelectorAll('.case-accordion__trigger'));
+            const setOpen = (trigger, open) => {
+                const panel = trigger.nextElementSibling;
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (panel) {
+                    panel.hidden = !open;
+                }
+            };
+            triggers.forEach((trigger) => {
+                trigger.addEventListener('click', () => {
+                    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+                    triggers.forEach((t) => setOpen(t, false));
+                    if (!isOpen) {
+                        setOpen(trigger, true);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

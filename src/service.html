@@ -16,46 +16,43 @@ was greatly influential on the design of this Aladdin Digital webpage-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body class="commitment-page service-page">
     <script language="javascript" type="text/javascript"  src="JavaScripts/header.js"></script>
 
-<section class="services-hero service-page-hero service-hero-compact">
-    <div class="services-hero-header">
+<section class="commitment-hero page-surface full-bleed">
+    <div class="commitment-header">
         <h1>Our Services</h1>
-        <p>Aladdin Digital specialises in delivering high-quality services across various categories for all clients and buyers. Our core service areas include talent hiring, recruitment, and related services; application, software engineering, and development services; and support and operations services. We are committed to providing tailored solutions that meet the unique needs of each client, leveraging our deep industry expertise and technical capabilities to drive successful outcomes.</p>
     </div>
 </section>
 
-<section class="service-areas">
-    <div class="service-areas-shell service-areas-layout">
-        <div class="service-areas-list">
-            <details class="service-area" open>
-                <summary>Talent hire, recruitment and related services</summary>
-                <p>Aladdin Digital offers comprehensive labour hire and recruitment services to provide highly skilled IT professionals to government clients. Our services include role scoping, candidate sourcing, technical screening, security and work-rights verification, interview preparation, onboarding and ongoing performance monitoring. We can deliver both seller-sourced and buyer-sourced labour hire models and can also supply seller-sourced workers under buyer-managed arrangements. Our recruitment approach focuses on technical merit, compliance with government standards and long-term capability uplift and we source personnel with strong expertise in solution design, technical implementation and BAU support.
-                </p>
-                <div class="service-card-action">
-                    <a class="hero-btn service-card-btn" href="caseStudyTalentHire.html">View Case Study</a>
-                </div>
-            </details>
-            <details class="service-area">
-                <summary>Application, software engineering and development services</summary>
-                <p>Aladdin Digital provides its customers with application, software engineering and development services supported by a team of highly experienced technicians. We specialise in solution design for web and mobile applications, using structured approaches to ensure clarity and alignment with our clients' business goals. Our full-stack developers work across modern frameworks including Drupal, GovCMS, React, Entity Framework and SQL Server to deliver secure, scalable and user-centred solutions. We are also skilled in implementing cloud environments using Microsoft Copilot, AWS and Azure, which help our clients modernise their systems, improve system performance and confidently adopt future-ready digital platforms.
-                </p>
-                <div class="service-card-action">
-                    <a class="hero-btn service-card-btn" href="caseStudyAppDevelopment.html">View Case Study</a>
-                </div>
-            </details>
-            <details class="service-area">
-                <summary>Support and operations services</summary>
-                <p>Aladdin Digital provides ICT support and operations services to ensure our clients have access to stable, secure and efficient business systems. We deliver end-to-end incident management, triage process, troubleshooting procedures and prompt system outage remediation while preventing recurrence through root-cause analysis and workflow improvements. Our team leverages their extensive industrial experience to assess application health status, improve system reliability and proactively strengthen security. We also help our clients adopt cost-effective and scalable technologies to fulfil their evolving business needs. Our team is experienced across multiple platforms and we specialise in system support establishment, BAU operational support and cloud-based monitoring, troubleshooting and security management.
-                </p>
-                <div class="service-card-action">
-                    <a class="hero-btn service-card-btn" href="caseStudySupportOps.html">View Case Study</a>
-                </div>
-            </details>
-        </div>
+<section class="commitment-intro">
+    <div class="commitment-header">
+        <p>Aladdin Digital specialises in delivering high-quality services across various categories for all clients and buyers. Our core service areas include talent hiring, recruitment, and related services; application, software engineering, and development services; and support and operations services. We are committed to providing tailored solutions that meet the unique needs of each client, leveraging our deep industry expertise and technical capabilities to drive successful outcomes.</p>
+    </div>
+    <div class="service-overview-grid">
+        <a class="service-overview-card" href="caseStudyTalentHire.html">
+            <i class="fa fa-users service-overview-icon" aria-hidden="true"></i>
+            <h3>Labour hire and recruitment</h3>
+            <span class="service-overview-cta">Learn more</span>
+        </a>
+        <a class="service-overview-card" href="caseStudyAppDevelopment.html">
+            <i class="fa fa-code service-overview-icon" aria-hidden="true"></i>
+            <h3>Application, software engineering and development</h3>
+            <span class="service-overview-cta">Learn more</span>
+        </a>
+        <a class="service-overview-card" href="caseStudySupportOps.html">
+            <i class="fa fa-life-ring service-overview-icon" aria-hidden="true"></i>
+            <h3>IT support and operations</h3>
+            <span class="service-overview-cta">Learn more</span>
+        </a>
+        <a class="service-overview-card" href="gen-ai.html">
+            <i class="fa fa-magic service-overview-icon" aria-hidden="true"></i>
+            <h3>AI solution and model deployment</h3>
+            <span class="service-overview-cta">Learn more</span>
+        </a>
     </div>
 </section>
+
 
 <section class="service-cta">
     <div class="service-cta-header">
@@ -91,6 +88,20 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     }
     function hideMenu(){
         navLinks.style.right= "-200px";
+    }
+</script>
+<script>
+    const serviceCta = document.querySelector('.service-cta');
+    if (serviceCta) {
+        const ctaObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                serviceCta.classList.toggle('is-inview', entry.isIntersecting);
+            });
+        }, {
+            root: null,
+            threshold: 0.35
+        });
+        ctaObserver.observe(serviceCta);
     }
 </script>
 

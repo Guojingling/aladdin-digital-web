@@ -7,6 +7,7 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aladdin Digital</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +15,45 @@ was greatly influential on the design of this Aladdin Digital webpage-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body class="commitment-page about-page">
   
 <script language="javascript" type="text/javascript"  src="JavaScripts/header.js"></script>
 
 <!-- Who are we -->
-<section class="facilities page-surface full-bleed">
-    <h1>About Us</h1>
-    <p class="about-intro"> Aladdin Digital is an IT consulting firm established in 2019 and headquartered in Canberra. We specialise in providing high-quality IT talent and delivering technical solutions to support a wide range of IT projects across public and private sectors.
-        
-        Our mission is to empower clients through innovative, efficient, and cost-effective digital solutions. We operate across three key service areas including
+<section class="commitment-hero page-surface full-bleed">
+    <div class="about-heading">
+        <h1>About Us</h1>
+    </div>
+</section>
 
-        <a href="service.html">technical management</a>, Azure
-        <a href="service.html">infrastructure design</a>,  and DevOps
-        <a href="service.html">engineering</a> to our clients.              
-    </p>    
+<section class="commitment-intro">
+    <div class="commitment-intro-grid row g-4 align-items-start">
+        <div class="commitment-intro-content col-12 col-lg-6">
+            <h2>The Legend and Our Legacy</h2>
+            <p>Inspired by the wisdom of folk legends, Aladdin represents the enlightenment and possibility of transformation.</p>
+            <p>We see technology as the miraculous Aladdin’s lamp, a source of insight, capability, and change. With the camel as our persona, we are resilient, reliable, and enduring, and with the cactus as our spirit, we are adaptive and vital.</p>
+            <p>Like stars shining in the cold Gobi night, we remain visible and dependable. Whenever you look up, Aladdin Digital stands beside you as a loyal and trustworthy partner and we will guide your organisations across the digital desert toward your business oasis.</p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <img class="about-lamp img-fluid" src="./img/aladdinLamp.png" alt="Aladdin lamp illustration">
+        </div>
+    </div>
+</section>
+<section class="commitment-intro">
+    <div class="commitment-intro-grid row g-4 align-items-start">
+        <div class="col-12 col-lg-6">
+            <img class="about-lamp img-fluid" src="./img/canberraLamp.png" alt="Lamp with Canberra map">
+        </div>
+        <div class="commitment-intro-content col-12 col-lg-6">
+            <h2>Our Identity</h2>
+            <p>Founded in 2019 and headquartered in Canberra, Aladdin Digital specialises in both providing high-quality IT talent and delivering technical solutions. We support a wide range of initiatives across public and private sectors. Our mission is to empower clients through innovative, efficient, and cost-effective digital solutions.</p>
+            <div class="commitment-intro-actions">
+                <a class="hero-btn" href="serviceToProject.html">View Our Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!--div class="row">
         <div class="facilities-col">
             <img src="./img/blankuser.png">
@@ -52,10 +77,6 @@ was greatly influential on the design of this Aladdin Digital webpage-->
         </div-->
 </section>
 
-<div style="text-align: center; padding: 0 0 8px;">
-    <a class="hero-btn" href="serviceToProject.html">View Our Services</a>
-</div>
-
 <script language="javascript" type="text/javascript"  src="JavaScripts/footer.js"></script>
 
 
@@ -68,6 +89,61 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     function hideMenu(){
         navLinks.style.right= "-200px";
     }
+
+    (function(){
+        var lamps = Array.prototype.slice.call(document.querySelectorAll(".about-lamp"));
+        if (!lamps.length) {
+            return;
+        }
+        var thresholds = new Map();
+        function updateThresholds(){
+            thresholds.clear();
+            lamps.forEach(function(lamp){
+                var rect = lamp.getBoundingClientRect();
+                thresholds.set(lamp, window.scrollY + rect.top + rect.height);
+            });
+        }
+        function onScroll(){
+            var scrollY = window.scrollY;
+            lamps.forEach(function(lamp){
+                var threshold = thresholds.get(lamp) || 0;
+                lamp.classList.toggle("is-highlighted", scrollY > threshold);
+            });
+        }
+        updateThresholds();
+        window.addEventListener("resize", updateThresholds);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+    })();
+
+    (function(){
+        var banner = document.querySelector(".about-cta-banner");
+        if (!banner) {
+            return;
+        }
+        if ("IntersectionObserver" in window) {
+            var observer = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if (entry.isIntersecting) {
+                        banner.classList.add("is-highlighted");
+                    } else {
+                        banner.classList.remove("is-highlighted");
+                    }
+                });
+            }, { threshold: 0.35 });
+            observer.observe(banner);
+            return;
+        }
+        function onScroll(){
+            var rect = banner.getBoundingClientRect();
+            var viewHeight = window.innerHeight || document.documentElement.clientHeight;
+            var visible = rect.top < viewHeight * 0.65 && rect.bottom > viewHeight * 0.35;
+            banner.classList.toggle("is-highlighted", visible);
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        onScroll();
+    })();
 </script>
 
 </body>

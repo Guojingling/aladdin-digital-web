@@ -14,17 +14,29 @@ was greatly influential on the design of this Aladdin Digital webpage-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="case-study-page">
     <script language="javascript" type="text/javascript" src="JavaScripts/header.js"></script>
 
     <section class="commitment page-surface full-bleed">
         <div class="commitment-header" style="text-align: left;">
-            <h1>Case Study: Application, software engineering and development services</h1>
-            <p>Aladdin Digital delivered a modular Grants management System for a government agency to replace its manual process. Working onsite with our client for twelve months, Aladdin’s Technical Developer analysed the requirements, designed the system architecture and dataflow and built the system components.
-            </p><p>
-            The Grant Management System now comprises real-time data validation and improved reporting tools, providing our client with accurate, consistent financial data, faster reporting to support funding decisions, reduced manual effort and improved transparency. Delivered on time and within budget, the System has improved our client's operational efficiency and ability to make informed decisions when distributing funding.
-            </p>
-            <p>Other details and cases coming soon.</p>
+            <h2>Application, software engineering and development services</h2>
+            <p>Aladdin Digital provides its customers with application, software engineering and development services supported by a team of highly experienced technicians. We specialise in solution design for web and mobile applications, using structured approaches to ensure clarity and alignment with our clients' business goals. Our full-stack developers work across modern frameworks including Drupal, GovCMS, React, Entity Framework and SQL Server to deliver secure, scalable and user-centred solutions. We are also skilled in implementing cloud environments using Microsoft Copilot, AWS and Azure, which help our clients modernise their systems, improve system performance and confidently adopt future-ready digital platforms.</p>
+            <div class="case-accordion-group" data-accordion-group>
+                <div class="case-accordion">
+                    <button class="case-accordion__trigger" type="button" aria-expanded="true">Case Study 1: Grants Management System for a Government Agency</button>
+                    <div class="case-accordion__panel">
+                        <p>Aladdin Digital delivered a modular Grants Management System for a government agency to replace its manual process. Working onsite with our client for twelve months, Aladdin’s Technical Developer analysed the requirements, designed the system architecture and dataflow and built the system components.</p>
+                        <p>The Grant Management System now comprises real-time data validation and improved reporting tools, providing our client with accurate, consistent financial data, faster reporting to support funding decisions, reduced manual effort and improved transparency. Delivered on time and within budget, the System has improved our client's operational efficiency and ability to make informed decisions when distributing funding.</p>
+                    </div>
+                </div>
+                <div class="case-accordion">
+                    <button class="case-accordion__trigger" type="button" aria-expanded="false">Case Study 2: Web Solution for local Café Canberra</button>
+                    <div class="case-accordion__panel" hidden>
+                        <p>Aladdin designed and delivered a web application for a Canberrian Café to support business growth and modernise customer engagement. </p>
+                        <p>Working within a three-month deadline, our team comprising a Cloud Engineer, Business Analyst and Full-Stack Developer worked with the client to define requirements, design the system architecture and build a cloud-hosted web application. The solution enabled the café to offer online ordering, bookings and feedback mechanisms to its customers and improved its marketing capability. Delivered on time and within budget, the platform provided a personalised ordering experience, increased sales revenue and a scalable system the café can maintain and expand independently.</p>
+                    </div>
+                </div>
+            </div>
             <p class="service-card-action">
                 <a class="hero-btn service-card-btn" href="service.html">Back to Services</a>
             </p>
@@ -42,6 +54,28 @@ was greatly influential on the design of this Aladdin Digital webpage-->
         function hideMenu(){
             navLinks.style.right= "-200px";
         }
+    </script>
+    <script>
+        const accordionGroups = document.querySelectorAll('[data-accordion-group]');
+        accordionGroups.forEach((group) => {
+            const triggers = Array.from(group.querySelectorAll('.case-accordion__trigger'));
+            const setOpen = (trigger, open) => {
+                const panel = trigger.nextElementSibling;
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (panel) {
+                    panel.hidden = !open;
+                }
+            };
+            triggers.forEach((trigger) => {
+                trigger.addEventListener('click', () => {
+                    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+                    triggers.forEach((t) => setOpen(t, false));
+                    if (!isOpen) {
+                        setOpen(trigger, true);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
