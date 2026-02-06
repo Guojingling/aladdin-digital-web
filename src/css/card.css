@@ -110,7 +110,7 @@
 
 .services-card-grid{
   max-width: 1200px;
-  margin: 52px auto 0;
+  margin: 32px auto 0;
 }
 
 .service-overview-grid{
@@ -183,13 +183,13 @@
 
 .service-cta{
   width: 100vw;
-  padding: 50px 0;
+  padding: 3em 8vw;
   text-align: center;
 }
 
 .service-cta-header{
   max-width: 760px;
-  margin: 0 auto 32px;
+  margin: 0 auto 28px;
 }
 
 .service-cta-header h2{
@@ -218,7 +218,6 @@
 
 .service-cta-card p{
   padding: 0;
-  font-size: 16px;
   line-height: 1.6;
   color: #444;
 }
@@ -411,11 +410,11 @@
 }
 
 .case-study-highlight__img--top{
-  object-position: center 5%;
+  object-position: center top;
 }
 
 .case-study-highlight__img--bottom{
-  object-position: center 95%;
+  object-position: center bottom;
 }
 
 .case-study-highlight:hover .case-study-highlight__media img{
@@ -490,17 +489,6 @@
   transform: translateX(4px);
 }
 
-@media(max-width: 900px){
-  .case-study-highlight{
-    grid-template-columns: 1fr;
-    max-height: none;
-  }
-
-  .case-study-highlight__media{
-    min-height: 220px;
-    max-height: none;
-  }
-}
 @media(max-width: 1024px){
   .cards-container{
       gap: 16px;
@@ -513,6 +501,34 @@
 }
 
 @media(max-width: 700px){
+  .case-study-highlight{
+      position: relative;
+      overflow: hidden;
+  }
+  .case-study-highlight__media{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+  }
+  .case-study-highlight__media img{
+      object-fit: cover;
+  }
+  .case-study-highlight__content{
+      position: relative;
+      z-index: 1;
+  }
+  .case-study-highlight__title,
+  .case-study-highlight__link{
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .case-study-highlight__content{
+      background: linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0));
+      border-radius: 12px;
+      padding: 14px 16px;
+  }
   .cards-container{
       flex-direction: column;
       gap: 16px;
@@ -543,8 +559,37 @@
       font-size: 15px;
       line-height: 1.55;
   }
+    .case-study-highlight__content,
+  .case-study-highlight__title,
+  .case-study-highlight__link,
+  .case-study-highlight__link::after{
+      color: white;
+  }
+  .case-study-highlight__tag{
+      background: rgba(250,200,66,0.9);
+      color: #202946;
+  }
   .service-overview-grid{
       grid-template-columns: 1fr;
+  }
+  .service-overview-card{
+      padding: 16px;
+  }
+  .service-overview-icon{
+      width: 52px;
+      height: 52px;
+      font-size: 28px;
+      margin: 2px 0 8px;
+  }
+  .service-overview-icon::before{
+      font-size: 30px;
+  }
+  .service-overview-card h3{
+      font-size: 20px;
+  }
+  .service-overview-cta{
+      margin-top: 8px;
+      font-size: 14px;
   }
 }
 
@@ -558,6 +603,63 @@
   .card-summary{
       font-size: 14px;
       line-height: 1.5;
+  }
+  .case-study-highlight{
+      position: relative;
+      overflow: hidden;
+  }
+  .case-study-highlight__media{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+  }
+  .case-study-highlight__media img{
+      object-fit: cover;
+  }
+  .case-study-highlight__content{
+      position: relative;
+      z-index: 1;
+  }
+  .case-study-highlight__title,
+  .case-study-highlight__link{
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .case-study-highlight__content{
+      background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0));
+      border-radius: 12px;
+      padding: 12px 14px;
+  }
+  .case-study-highlight__img--top{
+      object-position: center top;
+  }
+  .case-study-highlight__img--bottom{
+      object-position: center bottom;
+  }
+  .case-study-highlight{
+      min-height: 200px;
+      max-height: 220px;
+  }
+  .case-study-highlight__title{
+      font-size: 18px;
+  }
+  .case-study-highlight__content,
+  .case-study-highlight__title,
+  .case-study-highlight__link,
+  .case-study-highlight__link::after{
+      color: white;
+  }
+  .case-study-highlight__tag{
+      background: rgba(250,200,66,0.9);
+      color: #202946;
+  }
+  .case-study-highlight__link{
+      font-size: 13px;
+  }
+  .service-overview-card h3{
+      font-size: 18px;
   }
 }
 

@@ -11,6 +11,13 @@ was greatly influential on the design of this Aladdin Digital webpage. */
 :root{
   --footer-height: 160px;
   --nav-offset: 80px;
+  --z-bg: -1;
+  --z-base: 0;
+  --z-content: 10;
+  --z-footer: 20;
+  --z-header: 100;
+  --z-menu: 200;
+  --z-overlay: 300;
 }
 html, body{
   overflow-x: hidden;
@@ -48,7 +55,7 @@ html, body{
   color: #fff;
   transition: min-height 0.5s ease, padding 0.5s ease;
   overflow: hidden;
-  z-index: 0;
+  z-index: var(--z-base);
 }
 .hero::after{
   content: "";
@@ -57,11 +64,11 @@ html, body{
   background: #202946;
   opacity: var(--hero-darken, 0);
   transition: opacity 0.15s linear;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 .hero > *{
   position: relative;
-  z-index: 2;
+  z-index: var(--z-overlay);
 }
 .hero-scroll-indicator{
   position: absolute;
@@ -105,7 +112,7 @@ html, body{
   margin-bottom: 1.5rem;
   color: #fff !important;
   position: relative;
-  z-index: 2;
+  z-index: var(--z-overlay);
   transition: transform 0.5s ease, font-size 0.5s ease;
 }
 .hero h2::after{
@@ -116,7 +123,7 @@ html, body{
   max-width: 42rem;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: var(--z-overlay);
   transition: transform 0.5s ease, font-size 0.5s ease;
 }
 .snap-scroll{
@@ -132,7 +139,7 @@ html, body{
   will-change: transform, opacity;
   scroll-snap-align: start;
   position: relative;
-  z-index: 0;
+  z-index: var(--z-base);
 }
 
 .snap-scroll .page-section.active{
@@ -184,6 +191,10 @@ html, body{
   min-height: 10vh;
   width: 100%;
 }
+.sub-header{
+  position: relative;
+  z-index: var(--z-header);
+}
 nav {
   display: flex;
   padding: 16px 24px;
@@ -197,16 +208,22 @@ nav {
   margin: 0;
   box-sizing: border-box;
   transform: translateX(0);
-  z-index: 9999;
+  z-index: var(--z-header);
   isolation: isolate;
   background: #F1F1E6;
   box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+/* Keep footer below header/menu layers */
+.footer{
+  position: relative;
+  z-index: var(--z-footer);
 }
 body.home-page nav{
   background: #F1F1E6;
   box-shadow: 0 18px 38px rgba(0,0,0,0.24);
   border-bottom: 1px solid rgba(0,0,0,0.08);
   backdrop-filter: none;
+  z-index: var(--z-header);
 }
 body{
   padding-top: var(--nav-offset);
@@ -219,12 +236,11 @@ body.home-page{
 
 .home-page > *{
   position: relative;
-  z-index: 1;
 }
 
 .home-page .commitment-intro{
   position: relative;
-  z-index: 0;
+  z-index: var(--z-base);
 }
 
 .home-page .home-bg-layer{
@@ -232,7 +248,7 @@ body.home-page{
   inset: 0;
   background-color: #FAC842;
   opacity: 1;
-  z-index: -1;
+  z-index: var(--z-bg);
   pointer-events: none;
 }
 
@@ -281,12 +297,12 @@ body.case-study-page .commitment-hero::before{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: var(--z-base);
 }
 
 body.case-study-page .commitment-hero > *{
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 body.service-page .commitment-hero{
   background-image: url("../img/oasis.jpg");
@@ -328,6 +344,8 @@ nav img{
 .nav-links{
   flex: 1;
   text-align: right;
+  position: relative;
+  z-index: var(--z-menu);
 }
 .nav-links ul li{
   list-style: none;
@@ -355,7 +373,7 @@ nav img{
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.12);
   padding: 10px 0;
-  z-index: 1001;
+  z-index: var(--z-overlay);
 }
 .nav-links ul li .submenu li{
   display: block;
@@ -459,14 +477,14 @@ nav .fa{
       display: block;
   }
   .nav-links{
-      position: absolute;
+      position: fixed;
       background: #f3ba3f;
       height: 100vh;
       width: 200px;
       top: 0;
       right: -200px;
       text-align: left;
-      z-index: 2;
+      z-index: var(--z-menu);
       transition: 1s;
   }
   nav .fa{
@@ -515,7 +533,7 @@ h2{
 
 p{
 color:#3e3e3e;  
-font-size: 20px;
+font-size: 19px;
 font-weight: 300;
 line-height: normal;
 padding: 10px;
@@ -564,7 +582,7 @@ a{
     font-size: 36px;
   }
   p{
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.6;
   }
   .hero{
@@ -599,6 +617,10 @@ a{
   .campus-col,
   .testmonial-col{
     margin-bottom: 28px;
+  }
+  .testmonial-col p{
+    font-size: 19px;
+    line-height: 1.55;
   }
 }
 
@@ -659,15 +681,18 @@ a{
   .testmonial-col{
     padding: 20px;
   }
-  .testmonial-col p{
-    font-size: 15px;
-    line-height: 1.55;
-  }
+
   .testmonial-col h3{
     font-size: 28px;
   }
+  .testmonial-col p{
+    font-size: 19px;
+  }
   .testmonial .row{
     gap: 18px;
+  }
+  .row{
+      flex-direction: column;
   }
 }
 
@@ -688,7 +713,7 @@ a{
     font-size: 24px;
   }
   h2{
-    font-size: 26px;
+    font-size: 28px;
   }
   p{
     font-size: 15px;
@@ -701,23 +726,6 @@ a{
     font-size: 16px;
     line-height: 1.5;
     padding: 10px 0px;
-  }
-  .testmonial .testmonial-col p{
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .testmonial{
-    width: 98%;
-  }
-  .testmonial-col{
-    padding: 16px;
-  }
-  .testmonial-col p{
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  .testmonial-col h3{
-    font-size: 24px;
   }
   .hero{
     min-height: calc(100vh - var(--nav-offset));
@@ -737,9 +745,14 @@ a{
   .footer{
     width: 94%;
   }
+  .testmonial.page-section .testmonial-col p{
+  font-size: 15px;
+  line-height: 1.6;
+}
 }
 .row{
   margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
   justify-content: space-between;
   color:#3e3e3e;
@@ -774,11 +787,7 @@ h3{
 .course-col:hover{
   box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
 }
-@media(max-width: 700px){
-  .row{
-      flex-direction: column;
-  }
-}
+
 /* campus */
 .campus{
   width: 80%;
@@ -896,10 +905,6 @@ background: rgba(211, 0, 0, 0.2);
   padding: 26px;
   border-radius: 16px;
 }
-.testmonial.page-section .testmonial-col p{
-  font-size: 17px;
-  line-height: 1.6;
-}
 
 .testmonial-banner{
   background-color: #FAC842;
@@ -937,7 +942,7 @@ background: rgba(211, 0, 0, 0.2);
   filter: grayscale(100%);
   opacity: 0;
   transition: opacity 0.35s ease;
-  z-index: 0;
+  z-index: var(--z-base);
 }
 
 .testmonial-banner.is-highlighted::before{
@@ -946,7 +951,7 @@ background: rgba(211, 0, 0, 0.2);
 
 .testmonial-banner > *{
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 .testmonial .row{
   margin-top: 36px;
@@ -1059,7 +1064,12 @@ background: rgba(211, 0, 0, 0.2);
 }
 @media(max-width: 700px){
   .cta h1{
-      font-size: 20px;
+      font-size: 18px;
+      line-height: 1.25;
+  }
+  .hero-btncta{
+      font-size: 16px;
+      padding: 10px 24px;
   }
 }
 /* footer */
@@ -1079,6 +1089,11 @@ background: rgba(211, 0, 0, 0.2);
   font-size: 18px;
   line-height: normal;
   color: #ffffff;
+}
+@media(max-width: 700px){
+  .footer p{
+    font-size: 14px;
+  }
 }
 .footer p a{
   color: #CFA54B;
@@ -1140,6 +1155,10 @@ background: rgba(211, 0, 0, 0.2);
   align-self: center;
 }
 
+.commitment-intro-content p{
+  margin-bottom: 4px;
+}
+
 .commitment-intro-content p:first-child{
   margin-top: 16px;
 }
@@ -1166,6 +1185,29 @@ background: rgba(211, 0, 0, 0.2);
 
 
 @media(max-width: 700px){
+  .commitment-intro-grid{
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+  .commitment-intro-content,
+  .commitment-intro-grid > .col-12{
+    display: contents;
+  }
+  .commitment-intro-content h2{
+    grid-row: 1;
+  }
+  .commitment-intro-grid .about-lamp{
+    grid-row: 2;
+  }
+  .commitment-intro-content p{
+    text-align: left;
+  }
+  .commitment-intro-grid .about-lamp{
+    padding: 10px;
+    box-sizing: border-box;
+  }
   .about-lamp{
     max-width: none;
   }
@@ -1250,7 +1292,6 @@ background: rgba(211, 0, 0, 0.2);
 }
 .contact-col{
   flex-basis: 80%;
-  margin-bottom: 30px;
 }
 
 .contact-us .contact-col{
@@ -1554,6 +1595,11 @@ background: rgba(211, 0, 0, 0.2);
 @media(max-width: 900px){
   .case-study-detail{
     grid-template-columns: 1fr;
+  }
+}
+@media(max-width: 700px){
+  .case-study-detail__media{
+    display: none;
   }
 }
 
