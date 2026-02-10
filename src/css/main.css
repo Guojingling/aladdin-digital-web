@@ -1551,6 +1551,24 @@ body.home-page .hero-btncta{
   color: #4a4a4a;
 }
 
+body.service-page .service-intro-list{
+  max-width: 720px;
+  margin: 14px auto 16px;
+  padding-left: 0;
+  list-style-position: inside;
+  text-align: center;
+}
+
+body.service-page .service-intro-list li{
+  margin: 8px 0;
+  color: #353535;
+  line-height: 1.6;
+}
+
+body.service-page .service-intro-list li::marker{
+  color: #CFA54B;
+}
+
 .case-study-detail{
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
